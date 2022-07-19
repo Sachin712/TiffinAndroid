@@ -394,26 +394,24 @@ public class Chef_PostDish extends AppCompatActivity implements EasyPermissions.
             progressDialog.setTitle("Uploading...");
             progressDialog.show();
             RandomUId = UUID.randomUUID().toString();
-            ref = storageReference.child(RandomUId);
+            ref = FirebaseStorage.getInstance().getReference().child("dish");
+                    //storageReference.child(RandomUId);
             ChefId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-            ref.putFile(imageuri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            ref.child("image.jpg").putFile(imageuri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
 
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                        @Override
-                        public void onSuccess(Uri uri) {
-                            FoodSupplyDetails info = new FoodSupplyDetails(dishes, quantity, price, description, String.valueOf(uri), RandomUId, ChefId);
-                            firebaseDatabase.getInstance().getReference("FoodSupplyDetails").child(State).child(City).child(Sub).child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(RandomUId)
-                                    .setValue(info).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<Void> task) {
-                                            progressDialog.dismiss();
-                                            Toast.makeText(Chef_PostDish.this, "Dish posted successfully", Toast.LENGTH_SHORT).show();
-                                        }
-                                    });
-                        }
-                    });
+
+//                            FoodSupplyDetails info = new FoodSupplyDetails(dishes, quantity, price, description, String.valueOf(imageuri), RandomUId, ChefId);
+//                            firebaseDatabase.getInstance().getReference("FoodSupplyDetails").child(State).child(City).child(Sub).child(ChefId).child(RandomUId)
+//                                    .setValue(info).addOnCompleteListener(new OnCompleteListener<Void>() {
+//                                        @Override
+//                                        public void onComplete(@NonNull Task<Void> task) {
+//                                            progressDialog.dismiss();
+//                                            Toast.makeText(Chef_PostDish.this, "Dish posted successfully", Toast.LENGTH_SHORT).show();
+//                                        }
+//                                    });
+                    Toast.makeText(Chef_PostDish.this, "image done", Toast.LENGTH_SHORT).show();
 
                 }
             }).addOnFailureListener(new OnFailureListener() {
@@ -503,8 +501,8 @@ public class Chef_PostDish extends AppCompatActivity implements EasyPermissions.
                 && data != null && data.getData() != null) {
 
             //chosenPhotoUri is the Uri of the image the user has picked
-            Uri chosenPhotoUri = data.getData();
-            imageuri=chosenPhotoUri;
+            imageuri = data.getData();
+
 
              Toast.makeText(this, "image upload pehle: "+imageuri, Toast.LENGTH_SHORT).show();
 

@@ -16,7 +16,6 @@ import com.food_on.app.ChefFoodPanel.ChefPreparedOrderView;
 import com.food_on.app.ChefFoodPanel_BottomNavigation;
 import com.food_on.app.CustomerFoodPanel.PayableOrders;
 import com.food_on.app.CustomerFoodPanel_BottomNavigation;
-import com.food_on.app.Delivery_FoodPanelBottomNavigation;
 import com.food_on.app.MainActivity;
 import com.food_on.app.R;
 import java.util.Random;
@@ -61,10 +60,7 @@ public class ShowNotification {
             acIntent = new Intent(context, CustomerFoodPanel_BottomNavigation.class).putExtra("PAGE", "Preparedpage");
             pendingIntent = PendingIntent.getActivity(context, 0, acIntent, PendingIntent.FLAG_ONE_SHOT);
         }
-        if (page.trim().equalsIgnoreCase("DeliveryOrder")) {
-            acIntent = new Intent(context, Delivery_FoodPanelBottomNavigation.class).putExtra("PAGE", "DeliveryOrderpage");
-            pendingIntent = PendingIntent.getActivity(context, 0, acIntent, PendingIntent.FLAG_ONE_SHOT);
-        }
+
         if (page.trim().equalsIgnoreCase("DeliverOrder")) {
             acIntent = new Intent(context, CustomerFoodPanel_BottomNavigation.class).putExtra("PAGE", "DeliverOrderpage");
             pendingIntent = PendingIntent.getActivity(context, 0, acIntent, PendingIntent.FLAG_ONE_SHOT);

@@ -91,24 +91,6 @@ public class ChooseOne extends AppCompatActivity {
             }
         });
 
-        DeliveryPerson.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (type.equals("SignUp")) {
-                    Intent Registerdelivery = new Intent(ChooseOne.this, Delivery_registeration.class);
-                    startActivity(Registerdelivery);
-                }
-                if (type.equals("Phone")) {
-                    Intent loginphone = new Intent(ChooseOne.this, Delivery_LoginPhone.class);
-                    startActivity(loginphone);
-                    finish();
-                }
-                if (type.equals("Email")) {
-                    Intent loginemail = new Intent(ChooseOne.this, Delivery_Login.class);
-                    startActivity(loginemail);
-                    finish();
-                }
-            }
-        });
+
     }
 }

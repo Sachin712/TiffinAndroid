@@ -13,34 +13,7 @@
         android:theme="@style/AppTheme"
 
         tools:replace="android:icon">
-        <activity
-            android:name="com.food_on.app.DeliveryFoodPanel.Delivery_ShippingOrder"
-            android:label="Ship Orders" />
-        <activity
-            android:name="com.food_on.app.DeliveryFoodPanel.DeliveryShipOrderView"
-            android:label="Ship Orders" />
-        <activity
-            android:name="com.food_on.app.DeliveryFoodPanel.DeliveryPendingOrderView"
-            android:label="Pending Orders" />
-        <activity android:name="com.food_on.app.Delivery_FoodPanelBottomNavigation" />
-        <activity
-            android:name="com.food_on.app.Delivery_SendOtp"
-            android:theme="@style/AppThemeNoActionbar" />
-        <activity
-            android:name="com.food_on.app.Delivery_ForgotPassword"
-            android:theme="@style/AppThemeNoActionbar" />
-        <activity
-            android:name="com.food_on.app.Delivery_Login"
-            android:theme="@style/AppThemeNoActionbar" />
-        <activity
-            android:name="com.food_on.app.Delivery_LoginPhone"
-            android:theme="@style/AppThemeNoActionbar" />
-        <activity
-            android:name="com.food_on.app.Delivery_VerifyPhone"
-            android:theme="@style/AppThemeNoActionbar" />
-        <activity
-            android:name="com.food_on.app.Delivery_registeration"
-            android:theme="@style/AppThemeNoActionbar" />
+
         <activity
             android:name="com.food_on.app.ChefFoodPanel.ChefPreparedOrderView"
             android:label="Prepared Orders" />

@@ -66,11 +66,7 @@ public class MainActivity extends AppCompatActivity {
                                     startActivity(a);
                                     finish();
                                 }
-                                if (role.equals("DeliveryPerson")) {
-                                    Intent intent = new Intent(MainActivity.this, Delivery_FoodPanelBottomNavigation.class);
-                                    startActivity(intent);
-                                    finish();
-                                }
+
                             }
 
                             @Override
