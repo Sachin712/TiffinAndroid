@@ -21,7 +21,7 @@ public class ChooseOne extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_one);
         Chef = (Button) findViewById(R.id.chef);
-        DeliveryPerson = (Button) findViewById(R.id.delivery);
+        // DeliveryPerson = (Button) findViewById(R.id.delivery);
         Customer = (Button) findViewById(R.id.customer);
         AnimationDrawable animationDrawable = new AnimationDrawable();
         animationDrawable.addFrame(getResources().getDrawable(R.drawable.bghome2), 3000);
