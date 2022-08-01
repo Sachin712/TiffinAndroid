@@ -1,6 +1,11 @@
 package com.food_on.app.CustomerFoodPanel;
 
+import static android.content.Context.MODE_APPEND;
+
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -42,6 +47,7 @@ public class CustomerHomeFragment extends Fragment implements SwipeRefreshLayout
     DatabaseReference dataaa, databaseReference;
     SwipeRefreshLayout swipeRefreshLayout;
     SearchView searchView;
+    Context ctx;
 
 
     @Nullable
@@ -97,17 +103,24 @@ public class CustomerHomeFragment extends Fragment implements SwipeRefreshLayout
 
     private void customermenu() {
 
+
         swipeRefreshLayout.setRefreshing(true);
-        databaseReference = FirebaseDatabase.getInstance().getReference("FoodSupplyDetails").child(State).child(City).child(Sub);
+        String ChefIdFromDb = FirebaseDatabase.getInstance().getReference("Chef").child("NJP7hHFBBtbHfKWMR43q1gek2Tr2").toString();
+      String[] temp = ChefIdFromDb.split("/");
+      String temp2=temp[temp.length-1];
+
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("FoodSupplyDetails").child("Maharashtra").child("Mumbai").child("Churchgate").child("NJP7hHFBBtbHfKWMR43q1gek2Tr2");
+   String temp3=databaseReference.toString();
+      //  Log.d("dbr", "chefid: "+chefid);
+        //databaseReference = FirebaseDatabase.getInstance().getReference("FoodSupplyDetails").child(State).child(City).child(Sub).child(useridd);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 updateDishModelList.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    for (DataSnapshot snapshot1 : snapshot.getChildren()) {
-                        UpdateDishModel updateDishModel = snapshot1.getValue(UpdateDishModel.class);
+                        UpdateDishModel updateDishModel = snapshot.getValue(UpdateDishModel.class);
                         updateDishModelList.add(updateDishModel);
-                    }
+
                 }
                 adapter = new CustomerHomeAdapter(getContext(), updateDishModelList);
                 recyclerView.setAdapter(adapter);
