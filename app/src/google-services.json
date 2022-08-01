@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "208265782509",
+    "project_id": "mytiffin-1e688",
+    "storage_bucket": "mytiffin-1e688.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208265782509:android:17d20c8c3f6588375058e4",
+        "android_client_info": {
+          "package_name": "com.food_on.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208265782509-hc780d910s6fc0loe0na4vg8f0jllikv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.food_on.app",
+            "certificate_hash": "82d3dd831288d67cce8f459a0b9ad67d914abc08"
+          }
+        },
+        {
+          "client_id": "208265782509-um4iidnbefjgujs47bfq1dl8fj9d1kun.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCB0N5y8z9UShmzr1yPSPfWN7PbSCAtnMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208265782509-um4iidnbefjgujs47bfq1dl8fj9d1kun.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
